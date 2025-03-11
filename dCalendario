@@ -1,0 +1,15 @@
+   Tabela = List.Buffer( fVendas[Data] ),
+
+    MinDate = List.Min(Tabela),
+    MaxDate = List.Max(Tabela),
+
+    MaxYear = Date.Year(MaxDate),
+    MinYear = Date.Year(MinDate),
+    InitialDate = #date(   MinYear , 1  , 1  ),
+    EndDate = #date(    MaxYear, 12, 31),
+
+
+    Duration = Duration.Days( EndDate - InitialDate) + 1,
+
+
+    Fonte = List.Dates( InitialDate, Duration, #duration(1, 0, 0, 0)),
